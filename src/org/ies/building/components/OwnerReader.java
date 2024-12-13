@@ -1,6 +1,6 @@
-package components;
+package org.ies.building.components;
 
-import model.Owner;
+import org.ies.building.model.Owner;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class OwnerReader {
     }
 
     public Owner read(){
-        System.out.println("Introuduce tu nif");
+        System.out.println("Introduce tu nif");
         String nif = scanner.nextLine();
         System.out.println("Introduce tu nombre");
         String name = scanner.nextLine();

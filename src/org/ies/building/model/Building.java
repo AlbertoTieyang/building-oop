@@ -1,4 +1,4 @@
-package model;
+package org.ies.building.model;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -35,7 +35,7 @@ public class Building {
         return null;
     }
 
-    public void showFloor(int floorNumber) {
+    public void showFloorApartments(int floorNumber) {
         var floor = findFloor(floorNumber);
         if (floor == null) {
             System.out.println("No existe la planta");
@@ -46,7 +46,7 @@ public class Building {
         }
     }
 
-    public Apartment showOwner(String doorNumber, int floorNumber) {
+    public Apartment findOwners(String doorNumber, int floorNumber) {
         var door = findDoor(doorNumber);
         var floor = findFloor(floorNumber);
         if (floor == null) {
@@ -55,7 +55,7 @@ public class Building {
             System.out.println("No existe la puerta");
         } else {
             for (var apartment : apartments) {
-                apartment.getOwners();
+                return apartment;
             }
         }
         return null;
@@ -70,11 +70,13 @@ public class Building {
     }
 
     public void showOwnersInfo(String doorNumber, int floorNumber){
-        var owner = showOwner(doorNumber, floorNumber);
+        var owner = findOwners(doorNumber, floorNumber);
         if(owner == null ){
             System.out.println("No existe el apartamento");
         }else{
-            owner.getOwners();
+            for (var apartment: apartments) {
+                System.out.println(apartment);
+            }
         }
     }
 

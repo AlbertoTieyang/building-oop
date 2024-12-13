@@ -1,7 +1,9 @@
-import components.ApartmentReader;
-import components.BuildingApp;
-import components.BuildingReader;
-import components.OwnerReader;
+package org.ies.building;
+
+import org.ies.building.components.ApartmentReader;
+import org.ies.building.components.BuildingApp;
+import org.ies.building.components.BuildingReader;
+import org.ies.building.components.OwnerReader;
 
 import java.util.Scanner;
 

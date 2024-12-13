@@ -1,4 +1,4 @@
-package model;
+package org.ies.building.model;
 
 import java.util.Arrays;
 import java.util.Objects;

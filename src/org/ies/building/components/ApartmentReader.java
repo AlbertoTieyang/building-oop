@@ -1,7 +1,7 @@
-package components;
+package org.ies.building.components;
 
-import model.Apartment;
-import model.Owner;
+import org.ies.building.model.Apartment;
+import org.ies.building.model.Owner;
 
 import java.util.Scanner;
 
@@ -26,6 +26,8 @@ public class ApartmentReader {
 
         Owner[] owner = new Owner[n];
         for (int i = 0; i < owner.length; i++) {
+            int newI = i+1;
+            System.out.println("Introduce el propietario "+newI);
             owner[i] = ownerReader.read();
         }
 

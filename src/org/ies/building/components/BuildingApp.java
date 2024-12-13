@@ -1,6 +1,6 @@
-package components;
+package org.ies.building.components;
 
-import model.Building;
+import org.ies.building.model.Building;
 
 import java.util.Scanner;
 
@@ -22,37 +22,23 @@ public class BuildingApp {
             if(option==1){
                 building.showInfoBuilding();
             } else if (option == 2) {
-                System.out.println("Introduce una planta");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce una puerta");
-                String door = scanner.nextLine();
+                int floor = askFloor();
+                String door = askDoor();
                 building.findApartment(door, floor);
             } else if (option == 3) {
-                System.out.println("Introduce una planta");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                building.showFloor(floor);
+                int floor = askFloor();
+                building.showFloorApartments(floor);
             } else if (option == 4) {
-                System.out.println("Introduce una planta");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce una puerta");
-                String door = scanner.nextLine();
-                building.showOwner(door, floor);
+                int floor = askFloor();
+                String door = askDoor();
+                building.findOwners(door, floor);
             } else if(option == 5){
-                System.out.println("Introduce una planta");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce una puerta");
-                String door = scanner.nextLine();
+                int floor = askFloor();
+                String door = askDoor();
                 building.showApartmentInfo(floor, door);
             } else if (option == 6) {
-                System.out.println("Introduce una planta");
-                int floor = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Introduce una puerta");
-                String door = scanner.nextLine();
+                int floor = askFloor();
+                String door = askDoor();
                 building.showOwnersInfo(door, floor);
             } else if (option == 7 ) {
                 System.out.println("Saliendo...");
@@ -75,5 +61,18 @@ public class BuildingApp {
         int n = scanner.nextInt();
         scanner.nextLine();
         return n;
+    }
+
+    private int askFloor(){
+        System.out.println("Introduzca la planta");
+        int floor = scanner.nextInt();
+        scanner.nextLine();
+        return  floor;
+    }
+
+    private String askDoor(){
+        System.out.println("Introduce la puerta");
+        String door = scanner.nextLine();
+        return door;
     }
 }
