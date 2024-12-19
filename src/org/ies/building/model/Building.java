@@ -49,10 +49,8 @@ public class Building {
     public Apartment findOwners(String doorNumber, int floorNumber) {
         var door = findDoor(doorNumber);
         var floor = findFloor(floorNumber);
-        if (floor == null) {
-            System.out.println("No existe la planta");
-        } else if (door == null) {
-            System.out.println("No existe la puerta");
+        if (floor == null || door == null) {
+            System.out.println("No existe");
         } else {
             for (var apartment : apartments) {
                 return apartment;
